@@ -66,22 +66,22 @@
   window.matchMedia("(min-width: 861px)").addEventListener("change", (e) => { if (e.matches) setMenu(false); });
 
   /* ---------- Agendar llamada (Google Calendar) ---------- */
-  $("#btnMeet")?.addEventListener("click", () => {
-    // Mañana a las 15:00 UTC, una hora de duración
-    const start = new Date();
-    start.setUTCDate(start.getUTCDate() + 1);
-    start.setUTCHours(15, 0, 0, 0);
-    const end = new Date(start.getTime() + 60 * 60 * 1000);
-    const fmt = (d) => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
-    const url =
-      "https://calendar.google.com/calendar/render?action=TEMPLATE" +
-      "&text=" + encodeURIComponent("Reunión con MBTech") +
-      "&details=" + encodeURIComponent("Videollamada por Google Meet") +
-      "&location=" + encodeURIComponent("https://meet.google.com/") +
-      "&dates=" + fmt(start) + "/" + fmt(end) +
-      "&add=" + encodeURIComponent("mbtechit07@gmail.com");
-    window.open(url, "_blank", "noopener");
-  });
+ $("#btnMeet")?.addEventListener("click", () => {
+  // Mañana a las 15:00 hora Argentina (18:00 UTC), una hora de duración
+  const start = new Date();
+  start.setUTCDate(start.getUTCDate() + 1);
+  start.setUTCHours(18, 0, 0, 0);
+  const end = new Date(start.getTime() + 60 * 60 * 1000);
+  const fmt = (d) => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+  const url =
+    "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+    "&text=" + encodeURIComponent("Reunión con MBTech") +
+    "&details=" + encodeURIComponent("Videollamada por Google Meet. Coordinamos el horario por mail o WhatsApp.") +
+    "&dates=" + fmt(start) + "/" + fmt(end) +
+    "&ctz=" + encodeURIComponent("America/Argentina/Buenos_Aires") +
+    "&add=" + encodeURIComponent("mbtechit07@gmail.com");
+  window.open(url, "_blank", "noopener");
+});
 
   /* ---------- Galería de promociones ---------- */
   const strip = $("#promoStrip");
