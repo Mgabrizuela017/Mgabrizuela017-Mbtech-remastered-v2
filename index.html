@@ -106,20 +106,23 @@
 .promo-dots button{width:8px;height:8px;border-radius:99px;border:0;background:#3a3470;cursor:pointer;transition:width .3s,background .3s}
 .promo-dots button.on{width:26px;background:#7c5cff}
 @media(max-width:640px){.promo-arrow{width:36px;height:36px}}</style>
-  <section id="promociones" class="promos">
+ <section id="promociones" class="promos">
   <h2>Promociones especiales</h2>
 
-  <div class="promo-carousel" aria-roledescription="carrusel">
+  <div class="promo-carousel" role="region" aria-label="Promociones de MbTech">
     <button class="promo-arrow prev" aria-label="Anterior">‹</button>
 
     <div class="promo-viewport">
       <div class="promo-track">
-        <div class="promo-slide">
-          <!-- tu video actual: dejá acá el mismo <video> que ya tenés -->
-<video src="Assets/img/Mbtech_video_promocional_horizontal_claro_v2.mp4" autoplay muted loop playsinline controls></video>        </div>
+
         <div class="promo-slide">
           <img src="Assets/icons/mbtech-servicios-lento.gif" alt="Servicios de MBTech: webs, tiendas online, CRM/ERP y soporte técnico" width="800" height="450">
         </div>
+
+        <div class="promo-slide">
+          <video src="Assets/img/Mbtech_video_promocional_horizontal_claro_v2.mp4" muted loop playsinline controls preload="metadata"></video>
+        </div>
+
       </div>
     </div>
 
